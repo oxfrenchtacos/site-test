@@ -31,27 +31,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Form submission handling
-const contactForm = document.querySelector('.contact-form');
-
-contactForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    // Get form data
-    const formData = new FormData(contactForm);
-    const formDataObj = Object.fromEntries(formData.entries());
-
-    try {
-        // Here you would typically send the data to your server
-        // For now, we'll just show a success message
-        alert('Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağız.');
-        contactForm.reset();
-    } catch (error) {
-        alert('Bir hata oluştu. Lütfen daha sonra tekrar deneyiniz.');
-        console.error('Form submission error:', error);
-    }
-});
-
 // Add scroll animation for elements
 const observerOptions = {
     threshold: 0.1
