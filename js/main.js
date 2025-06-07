@@ -70,4 +70,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     images.forEach(img => imageObserver.observe(img));
+});
+
+// Prevent unwanted scroll jumps
+window.addEventListener('beforeunload', function () {
+    window.scrollTo(0, window.scrollY);
 }); 
