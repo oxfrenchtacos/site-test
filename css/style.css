@@ -1105,6 +1105,87 @@ footer {
         z-index: 1100;
         position: fixed !important;
     }
+
+    .modal {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .modal-content {
+        position: relative;
+        display: block;
+        margin: auto;
+        max-width: 90vw;
+        max-height: 70vh;
+    }
+
+    .modal-controls {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0;
+        pointer-events: none;
+        z-index: 10001;
+    }
+
+    .modal-controls .prev-btn,
+    .modal-controls .next-btn {
+        background: transparent;
+        color: #fff;
+    }
+
+    .modal-controls .prev-btn:hover,
+    .modal-controls .next-btn:hover,
+    .modal-controls .prev-btn:active,
+    .modal-controls .next-btn:active,
+    .modal-controls .prev-btn:focus,
+    .modal-controls .next-btn:focus {
+        background: transparent;
+        color: #fff;
+        outline: none;
+        box-shadow: none;
+    }
+
+    .modal-controls .zoom-in-btn,
+    .modal-controls .zoom-out-btn {
+        display: none !important;
+    }
+
+    .modal-controls .prev-btn,
+    .modal-controls .next-btn {
+        z-index: 10002;
+        pointer-events: auto;
+    }
+}
+
+@media (min-width: 769px) {
+
+    .modal-controls .zoom-in-btn,
+    .modal-controls .zoom-out-btn {
+        display: inline-block !important;
+        background: rgba(255, 255, 255, 0.8);
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+        cursor: pointer;
+        transition: background 0.3s;
+        color: #222;
+        margin: 0 5px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    }
+
+    .modal-controls .zoom-in-btn:hover,
+    .modal-controls .zoom-out-btn:hover {
+        background: #fff;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1548,7 +1629,7 @@ footer {
     right: 30px;
     width: 50px;
     height: 50px;
-    background-color: var(--primary-color);
+    background-color: #2d2d2d;
     color: var(--white);
     border: none;
     border-radius: 50%;
@@ -1655,4 +1736,110 @@ footer {
     .desktop-whatsapp-btn {
         display: none !important;
     }
+}
+
+/* Gallery Section */
+.gallery {
+    padding: 5rem 5%;
+    background: var(--light-gray);
+}
+
+.gallery h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--primary-color);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    aspect-ratio: 4/3;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Modal for Gallery */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 800px;
+    max-height: 80vh;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-controls {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.modal-controls button {
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.modal-controls button:hover {
+    background: rgba(255, 255, 255, 1);
 }
