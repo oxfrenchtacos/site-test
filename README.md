@@ -14,11 +14,13 @@ Bu proje, oto galeriler için profesyonel fotoğraf ve video prodüksiyon hizmet
 ## Kurulum
 
 1. Repository'yi klonlayın:
+
 ```bash
 git clone https://github.com/[your-username]/[repository-name].git
 ```
 
 2. Proje dizinine gidin:
+
 ```bash
 cd [repository-name]
 ```
