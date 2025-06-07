@@ -75,4 +75,22 @@ document.addEventListener('DOMContentLoaded', () => {
 // Prevent unwanted scroll jumps
 window.addEventListener('beforeunload', function () {
     window.scrollTo(0, window.scrollY);
+});
+
+// Scroll to Top Button
+const scrollToTopButton = document.getElementById('scrollToTop');
+
+window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) {
+        scrollToTopButton.classList.add('visible');
+    } else {
+        scrollToTopButton.classList.remove('visible');
+    }
+});
+
+scrollToTopButton.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
 }); 
