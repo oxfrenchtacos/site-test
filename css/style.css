@@ -1740,7 +1740,7 @@ footer {
 
 /* Gallery Section */
 .gallery {
-    padding: 5rem 5%;
+    padding: 9rem 5%;
     background: var(--light-gray);
 }
 
@@ -1842,4 +1842,10 @@ footer {
 
 .modal-controls button:hover {
     background: rgba(255, 255, 255, 1);
+}
+
+@media (max-width: 768px) {
+    .gallery {
+        padding-top: 5rem;
+    }
 }
