@@ -1781,7 +1781,6 @@ footer {
 
 /* Modal for Gallery */
 .modal {
-    display: none;
     position: fixed;
     z-index: 1000;
     left: 0;
@@ -1798,7 +1797,6 @@ footer {
 .modal-content {
     margin: auto;
     display: block;
-    width: 80%;
     max-width: 800px;
     max-height: 80vh;
 }
